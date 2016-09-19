@@ -171,7 +171,7 @@ chkconfig sshd on
 
 # install dropbear
 yum -y install dropbear
-echo "OPTIONS=\"-p 109 -p 110 -p 445\"" > /etc/sysconfig/dropbear
+echo "OPTIONS=\"-p 109 -p 110 -p 443\"" > /etc/sysconfig/dropbear
 echo "/bin/false" >> /etc/shells
 service dropbear restart
 chkconfig dropbear on
@@ -263,8 +263,8 @@ echo "Service"  | tee -a log-install.txt
 echo "-------"  | tee -a log-install.txt
 echo "OpenVPN  : TCP 1194 (client config : http://$MYIP/client.tar)"  | tee -a log-install.txt
 echo "OpenSSH  : 22, 143"  | tee -a log-install.txt
-echo "Dropbear : 109, 110, 445"  | tee -a log-install.txt
-echo "Squid3   : 443 (limit to IP SSH)"  | tee -a log-install.txt
+echo "Dropbear : 109, 110, 443"  | tee -a log-install.txt
+echo "Squid3   : 8080 (limit to IP SSH)"  | tee -a log-install.txt
 echo "badvpn   : badvpn-udpgw port 7300"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "Tools"  | tee -a log-install.txt
